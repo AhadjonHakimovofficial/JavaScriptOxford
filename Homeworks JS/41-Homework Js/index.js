@@ -3,7 +3,7 @@ let name = document.querySelector(".name")
 let password = document.querySelector(".password")
 let submit = document.querySelector(".submit")
 let h1 = document.createElement("h1")
-
+let check = document.querySelector("#eslabqolish")
 
 
 
@@ -74,17 +74,26 @@ submit.addEventListener("click", function (e) {
             h1.textContent = "Chekking ... "
             form.append(h1)
             setTimeout(() => {
-                h1.textContent = " Okey Your Passvord Saved "
-                form.append(h1)
-            }, 2000); setTimeout(() => {
+                if (check.value) {
+                    h1.textContent = " Okey Your Passvord Saved "
+                    form.append(h1)
+                } else {
+                    h1.textContent = " Okey Your Passvord DisSaved "
+                    form.append(h1)
+                }
+            }, 2000);
+            setTimeout(() => {
                 alert(`Your password is - " ${shart3} " ,Your name is " ${name.value} "`)
             }, 4000);
+
+
         } else {
             h1.textContent = "Kamida Bitta Son Bo'lsin"
             form.append(h1)
         }
     }
 
+    console.log(check.value);
 
 
 
